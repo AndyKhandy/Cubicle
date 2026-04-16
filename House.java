@@ -1,20 +1,20 @@
 public class House extends Property {
-    private String propertyTax;
+    private double propertyTax;
     private int floors;
     private int garages;
 
-    public House(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, boolean hasBackyard, double yearlyCost, String otherFeatures, String propertyTax, int floors, int garages){
-                super(address, minPeople, maxPeople, bedrooms, bathrooms, hasBackyard, yearlyCost, otherFeatures);
+    public House(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, double propertyTax, int floors, int garages, Status currStatus){
+                super(address, minPeople, maxPeople, bedrooms, bathrooms, yearlyCost, otherFeatures, currStatus);
                 this.propertyTax = propertyTax;
                 this.floors = floors;
                 this.garages = garages;
     }
 
-    public String getPropertyTax() {
+    public double getPropertyTax() {
     return propertyTax;
     }
 
-    public void setPropertyTax(String propertyTax) {
+    public void setPropertyTax(double propertyTax) {
         this.propertyTax = propertyTax;
     }
 
@@ -35,25 +35,25 @@ public class House extends Property {
     }
 
     public void displayPicture(){
-        System.out.println("    ___________________     ");
-        System.out.println("  /                     \\  ");
-        System.out.println(" /_______________________\\ ");
-        System.out.println("  |  __     __     __   |    ");
-        System.out.println("  | |__|   |__|   |__|  |    ");
-        System.out.println("  |                     |    ");
-        System.out.println("  |       _________     |    ");
-        System.out.println("  |      |   __   |     |    ");
-        System.out.println("  |      |  |  |  |     |    ");
-        System.out.println("  |______|__|__|__|_____|    ");
-        System.out.println("        |          |          ");
-        System.out.println("        |__________|          \n");
+        System.out.println("    ________________     ");
+        System.out.println("  /                  \\  ");
+        System.out.println(" /____________________\\ ");
+        System.out.println("  |  __    __    __  |    ");
+        System.out.println("  | |__|  |__|  |__| |    ");
+        System.out.println("  |                  |    ");
+        System.out.println("  |     ________     |    ");
+        System.out.println("  |    |   __   |    |    ");
+        System.out.println("  |    |  |  |  |    |    ");
+        System.out.println("  |___ |__|__|__|____|    ");
+        System.out.println("      |         |          ");
+        System.out.println("      |_________|          \n");
     }
 
     @Override
     public void displayProperty(){
         System.out.printf("%d FLOOR HOUSE\n", floors);
         super.displayProperty();
-        System.out.println("Property Tax: " + propertyTax);
+        System.out.printf("Property Tax: %.2f%%\n", propertyTax);
         System.out.println("Garages: " + garages);
         System.out.println("Other Information: " + getOtherFeatures());
     }

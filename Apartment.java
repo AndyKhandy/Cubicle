@@ -3,8 +3,8 @@ public class Apartment extends Property{
     private double monthlyRentAmount;
     private int floorNumber;
 
-    public Apartment(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, boolean hasBackyard, double yearlyCost, String otherFeatures, String landLordName, double monthlyRentAmount, int floorNumber){
-        super(address, minPeople, maxPeople, bedrooms, bathrooms, hasBackyard, yearlyCost, otherFeatures);
+    public Apartment(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, String landLordName, double monthlyRentAmount, int floorNumber,Status currStatus){
+        super(address, minPeople, maxPeople, bedrooms, bathrooms, yearlyCost, otherFeatures, currStatus);
         this.landLordName = landLordName;
         this.monthlyRentAmount = monthlyRentAmount;
         this.floorNumber = floorNumber;

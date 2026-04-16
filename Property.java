@@ -6,19 +6,19 @@ public abstract class Property {
     private int maxPeopleCapacity;
     private int bedrooms;
     private int bathrooms;
-    private boolean backyard;
     private double yearlyCost;
     private String otherFeatures;
+    private Status currentStatus;
 
-    public Property(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, boolean hasBackyard, double yearlyCost, String otherFeatures){
+    public Property(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, Status currStatus){
         this.address = address;
         this.minPeopleCapacity = minPeople;
         this.maxPeopleCapacity = maxPeople;
         this.bedrooms = bedrooms;
         this.bathrooms = bathrooms;
-        this.backyard = hasBackyard;
         this.yearlyCost = yearlyCost;
         this.otherFeatures = otherFeatures;
+        this.currentStatus = currStatus;
     }
 
     public String getAddress() {
@@ -61,14 +61,6 @@ public abstract class Property {
         this.bathrooms = bathrooms;
     }
 
-    public boolean hasBackyard() {
-        return backyard;
-    }
-
-    public void setBackyard(boolean hasBackyard) {
-        this.backyard = hasBackyard;
-    }
-
     public double getYearlyCost() {
         return yearlyCost;
     }
@@ -85,11 +77,24 @@ public abstract class Property {
         this.otherFeatures = otherFeatures;
     }
 
+    public Status getStatus() {
+        return currentStatus;
+    }
+
+    public void setOtherFeatures(Status newStatus) {
+        this.currentStatus = newStatus;
+    }
+
     public void displayProperty(){
+        System.out.println("Current Status: " + currentStatus.name());
         System.out.printf("For %d-%d People\n", minPeopleCapacity, maxPeopleCapacity);
         System.out.println("Address: " + address);
         System.out.printf("Bedrooms: %d | Bathrooms: %d\n", bedrooms, bathrooms);
         System.out.printf("Yearly Cost: $%.2f\n",yearlyCost);
+    }
+
+    public void displayPropertyShorthand(){
+        System.out.printf("$%.2f | %s\n",yearlyCost,address);
     }
 
     public abstract void displayPicture();

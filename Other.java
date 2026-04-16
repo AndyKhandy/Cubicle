@@ -1,8 +1,8 @@
 public class Other extends Property {
     private String orignalType;
 
-    public Other(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, boolean hasBackyard, double yearlyCost, String otherFeatures, String originalTypeString){
-        super(address, minPeople, maxPeople, bedrooms, bathrooms, hasBackyard, yearlyCost, otherFeatures);
+    public Other(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, String originalTypeString, Status currStatus){
+        super(address, minPeople, maxPeople, bedrooms, bathrooms, yearlyCost, otherFeatures, currStatus);
         this.orignalType = originalTypeString;
     }
 
@@ -17,7 +17,7 @@ public class Other extends Property {
     public void displayPicture(){
         System.out.println("    _________");
         System.out.println("   /         \\");
-        System.out.println("  |     ?     |");
+        System.out.println("  |    ???    |");
         System.out.println("  |           |");
         System.out.println("  |___________|");
         System.out.println("      |   |");

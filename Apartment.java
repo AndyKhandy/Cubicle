@@ -10,6 +10,7 @@ public class Apartment extends Property{
         this.floorNumber = floorNumber;
     }
 
+    //getters and setters
     public String getLandLordName() {
     return landLordName;
     }
@@ -43,6 +44,7 @@ public class Apartment extends Property{
         System.out.println("Other Information: " + getOtherFeatures());
     }
 
+    //visual image for apartments
     public void displayPicture(){
     System.out.println("   ___________");
     System.out.println("  |   _   _   |");

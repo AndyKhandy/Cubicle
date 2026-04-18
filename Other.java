@@ -2,10 +2,12 @@ public class Other extends Property {
     private String orignalType;
 
     public Other(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, String originalTypeString, Status currStatus){
+        //calls super's constructor
         super(address, minPeople, maxPeople, bedrooms, bathrooms, yearlyCost, otherFeatures, currStatus);
         this.orignalType = originalTypeString;
     }
 
+    //seters and getters
     public String getOriginalType(){
         return orignalType;
     }
@@ -24,6 +26,8 @@ public class Other extends Property {
         System.out.println("      |___|  \n");
     }
 
+    @Override
+    //displays the information for an Other property
     public void displayProperty(){
         System.out.printf("%s\n", orignalType);
         super.displayProperty();

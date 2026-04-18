@@ -3,6 +3,7 @@
 public class Main{
     public static void main(String[] args){
     PropertySystem system = new PropertySystem();
+    FileHandler filier = new FileHandler();
 
         system.addMockProperty(new House(
     "1990 Blue Lake Blvd Arlington TX, 76040",

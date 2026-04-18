@@ -10,6 +10,7 @@ public class House extends Property {
                 this.garages = garages;
     }
 
+    //getters and setters
     public double getPropertyTax() {
     return propertyTax;
     }
@@ -34,6 +35,7 @@ public class House extends Property {
         this.garages = garages;
     }
 
+    //visual image for houses
     public void displayPicture(){
         System.out.println("    ________________     ");
         System.out.println("  /                  \\  ");

@@ -10,6 +10,7 @@ public abstract class Property {
     private String otherFeatures;
     private Status currentStatus;
 
+    //main constructor
     public Property(String address, int minPeople, int maxPeople, int bedrooms, int bathrooms, double yearlyCost, String otherFeatures, Status currStatus){
         this.address = address;
         this.minPeopleCapacity = minPeople;
@@ -20,6 +21,8 @@ public abstract class Property {
         this.otherFeatures = otherFeatures;
         this.currentStatus = currStatus;
     }
+
+    //all the getters and setters
 
     public String getAddress() {
         return address;
@@ -85,6 +88,7 @@ public abstract class Property {
         this.currentStatus = newStatus;
     }
 
+    //superclass implementation of displayProperty that is used in the subclasses as well so need to make it abstract
     public void displayProperty(){
         System.out.println("Current Status: " + currentStatus.name());
         System.out.printf("For %d-%d People\n", minPeopleCapacity, maxPeopleCapacity);
@@ -93,9 +97,11 @@ public abstract class Property {
         System.out.printf("Yearly Cost: $%.2f\n",yearlyCost);
     }
 
+    //shorthand display to not clog terminal if needed
     public void displayPropertyShorthand(){
         System.out.printf("$%.2f | %s\n",yearlyCost,address);
     }
+
 
     public abstract void displayPicture();
 }

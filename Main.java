@@ -5,6 +5,16 @@ public class Main{
     PropertySystem system = new PropertySystem();
     Scanner input = new Scanner(System.in);
 
+        System.out.print("Load properties from a saved file? (Y/N): ");
+        if (input.nextLine().trim().equalsIgnoreCase("y")) {
+            System.out.print("Enter the file name to load (don't include .txt): ");
+            String loadFile = input.nextLine().trim().concat(".txt");
+            for (Property p : FileHandler.readFile(loadFile)) {
+                system.addMockProperty(p);
+            }
+            System.out.println("Properties loaded from " + loadFile + "\n");
+        }
+
         system.addMockProperty(new House(
     "1990 Blue Lake Blvd Arlington TX, 76040",
     2,

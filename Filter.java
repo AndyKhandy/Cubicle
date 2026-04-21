@@ -107,7 +107,7 @@ public class Filter {
                 System.out.print("Would you like to save the filtered properties to a file? (Y/N): ");
                 saveToFile = input.nextLine();
                 if(saveToFile.equalsIgnoreCase("y")){
-                    Filier.writeToFile(list, input);
+                    Filier.writeToFile(validProperties, input);
                 }
             }
         }
